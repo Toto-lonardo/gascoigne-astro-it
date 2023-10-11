@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import GascoigneLogo from "../../public/gascoignelogo.webp";
+import { Menu } from "../components/Menu";
+---
+
+<div class="bg-red-900">
+  <div class="flex flex-row justify-between items-center">
+    <Image
+      class="p-4 ml-4"
+      src={GascoigneLogo}
+      alt="Il logo ufficiale del Gascoigne Pub"
+      width={170}
+    />
+    <Menu client:load />
+  </div>
+</div>
