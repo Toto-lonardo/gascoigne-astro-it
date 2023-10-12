@@ -3,6 +3,9 @@ import Testata from "../components/Testata.astro";
 interface Props {
   title: string;
 }
+import Footer from "../components/Footer.astro";
+
+import "@fontsource/permanent-marker";
 
 const { title } = Astro.props;
 ---
@@ -23,5 +26,6 @@ const { title } = Astro.props;
   <body>
     <Testata />
     <slot />
+    <Footer />
   </body>
 </html>

@@ -1,13 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Hero from "../../public/cover.webp";
+import Cocktail from "../../public/cocktail.svg";
+import Beer from "../../public/beer.svg";
+import Dj from "../../public/dj.svg";
 ---
 
 <Layout title="Gascoigne Pub">
-  <main>
-    <div class="container mx-auto">
-      <Image src={Hero} alt={"Insegna del Gascoigne Pub"} />
+  <main class="bg-red-900">
+    <div class="mx-auto">
+      <div class="bg-fixed bg-center bg-[url('/hero.jpg')]">
+        <div
+          class="gap-48 min-h-screen rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
+        >
+          <div class="p-4">
+            <h2 class="my-4 font-marker text-5xl text-white">
+              "Qualunque cosa faccia nella vita deve essere divertente: se non
+              lo è vuol dire che ho fallito."
+            </h2>
+            <p class="text-5xl text-gray-800 font-marker self-start">
+              Paul Gascoigne
+            </p>
+          </div>
+          <div class="bg-white w-full p-6 py-12">
+            <p class="text-black text-lg">
+              <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni
+              un punto di riferimento per i clienti attenti alle qualità e
+              amanti della buona musica.
+            </p>
+            <p class="text-black text-lg pt-4">
+              Sorprendenti cocktail preparati dal nostro staff, una vasta
+              selezione di birre artigianali e eventi imperdibili rappresentano
+              i punti di forza del locale.
+            </p>
+            <div class="mx-auto gap-12 flex flex-row justify-evenly my-4">
+              <div
+                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+              >
+                <Image
+                  src={Cocktail}
+                  alt={"Cocktail"}
+                  class="bg-zinc-200 max-h-16 rounded-full"
+                />
+              </div>
+              <div
+                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+              >
+                <Image
+                  src={Dj}
+                  alt={"Dj"}
+                  class="top-0 max-h-16 left-0 relative"
+                />
+              </div>
+              <div
+                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+              >
+                <Image
+                  src={Beer}
+                  alt={"Beer"}
+                  class="bg-zinc-200 max-h-16 rounded-full"
+                />
+              </div>
+            </div>
+            <p class="text-black text-lg pt-6">
+              Il Gascoigne si trova in Piazza Teatro Santa Cecilia, 1 nel cuore
+              del centro storico di Palermo, in una delle zone più in voga della
+              "movida" palermitana.
+            </p>
+          </div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.1069970835424!2d13.36249057662905!3d38.11444509251991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58c865db055%3A0x3f67b9048dae7e0!2sGascoigne!5e0!3m2!1sit!2sit!4v1697039947033!5m2!1sit!2sit"
+          class="w-full h-80"
+          style="w-full"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
     </div>
   </main>
 </Layout>
