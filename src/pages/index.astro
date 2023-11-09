@@ -10,45 +10,49 @@ changeLanguage("en");
 <Layout title={t("home.title")}>
   <main class="bg-red-900">
     <div class="">
-      <div class="bg-fixed bg-center bg-[url('/hero.jpg')]">
+      <div
+        class="bg-no-repeat bg-cover md:bg-center bg-bottom h-[70vh] bg-[url('/hero.jpg')]"
+      >
         <div
-          class="gap-48 min-h-screen rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
+          class="h-[70vh] rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
         >
-          <div class="p-4">
-            <h2 class="my-4 font-marker text-3xl md:text-5xl text-white">
+          <div class="p-4 mx-auto max-w-screen-lg">
+            <h2 class="my-4 font-marker text-2xl md:text-5xl text-white">
               {t("home.quote")}
             </h2>
-            <p class="text-5xl text-gray-800 font-marker self-start">
+            <p
+              class="md:text-5xl text-3xl text-gray-800 font-marker self-start"
+            >
               Paul Gascoigne
             </p>
           </div>
-          <div class="bg-white w-full p-6 py-6">
-            <Trans i18nKey="home.first">
-              <p class="text-black text-lg">
-                <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni
-                un punto di riferimento per i clienti attenti alle qualità e
-                amanti della buona musica.
-              </p>
-            </Trans>
-            <p class="text-black text-lg pt-4">
-              {t("home.second")}
-            </p>
-            <Features />
-            <p class="text-black text-lg">
-              {t("home.third")}
-            </p>
-          </div>
         </div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.1069970835424!2d13.36249057662905!3d38.11444509251991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58c865db055%3A0x3f67b9048dae7e0!2sGascoigne!5e0!3m2!1sit!2sit!4v1697039947033!5m2!1sit!2sit"
-          class="w-full h-80"
-          style="w-full"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+      </div>
+      <div class="bg-white w-full p-6 py-6">
+        <Trans i18nKey="home.first">
+          <p class="text-black text-lg">
+            <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni un
+            punto di riferimento per i clienti attenti alle qualità e amanti
+            della buona musica.
+          </p>
+        </Trans>
+        <p class="text-black text-lg pt-4">
+          {t("home.second")}
+        </p>
+        <Features />
+        <p class="text-black text-lg">
+          {t("home.third")}
+        </p>
       </div>
     </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.1069970835424!2d13.36249057662905!3d38.11444509251991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58c865db055%3A0x3f67b9048dae7e0!2sGascoigne!5e0!3m2!1sit!2sit!4v1697039947033!5m2!1sit!2sit"
+      class="w-full h-80"
+      style="w-full"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    >
+    </iframe>
   </main>
 </Layout>
