@@ -1,17 +1,33 @@
 ---
 import { Image } from "astro:assets";
+import { localizePath } from "astro-i18next";
+import { LanguageSelector } from "astro-i18next/components";
 import GascoigneLogo from "../../public/gascoignelogo.webp";
 import { Menu } from "../components/Menu";
 ---
 
 <div class="bg-red-900">
   <div class="flex flex-row justify-between items-center">
-    <Image
-      class="p-4 ml-4"
-      src={GascoigneLogo}
-      alt="Il logo ufficiale del Gascoigne Pub"
-      width={170}
-    />
-    <Menu client:load />
+    <a href={localizePath("/")}>
+      <Image
+        class="p-4"
+        src={GascoigneLogo}
+        alt="Il logo ufficiale del Gascoigne Pub"
+        width={150}
+      />
+    </a>
+    <div class="">
+      <LanguageSelector
+        showFlag={false}
+        languageMapping={{ en: "English" }}
+        class="bg-red-900 text-white text-lg"
+      />
+    </div>
+    <Menu client:load>
+      <a slot="home" href="/">Home</a>
+      <a slot="menu" href="/menu">Menu</a>
+      <a slot="about" href="/about">About</a>
+      <a slot="contact" href="/contact">Contact</a>
+    </Menu>
   </div>
 </div>

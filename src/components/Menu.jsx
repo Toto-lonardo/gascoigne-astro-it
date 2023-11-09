@@ -1,50 +1,76 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import { animate, motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 
-const menu = [
-  { href: "", label: "Home" },
-  { href: "menu", label: "Menu" },
-  { href: "about", label: "About" },
-  { href: "Contacts", label: "Contact" },
-];
-
-export const Menu = () => {
+export const Menu = (props) => {
   const [toggled, setToggle] = useState(false);
   const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    // This forces a rerender, so the date is rendered
+    // the second time but not the first
+    setHydrated(true);
+  }, []);
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null;
+  }
+
   return (
     <>
-      <div className="flex flex-row items-center justify-end xl:justify-around w-full ">
+      <div className="flex flex-row items-center justify-end xl:justify-around mx-2 ">
         <nav className="">
           {!isDesktop && toggled && (
-            <motion.ul
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ type: "spring", stiffness: 100 }}
-              className="fixed flex flex-col gap-4 items-center justify-center text-3xl text-white bg-red-900 h-full w-full bottom-0 left-0 z-30"
-            >
-              {menu.map((voce) => {
-                return (
-                  <motion.li
-                    initial={{ x: 250, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    key={voce.href}
-                  >
-                    <a href={voce.href}>{voce.label}</a>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
+            <ul className="fixed flex flex-col gap-4 items-center justify-center text-3xl text-white bg-red-900 h-full w-full bottom-0 left-0 z-30">
+              <motion.li
+                initial={{ x: 250, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0, ease: "easeIn" }}
+                className="flex flex-col gap-4"
+              >
+                <a>{props.home}</a>
+              </motion.li>
+              <motion.li
+                initial={{ x: 250, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.1, ease: "easeIn" }}
+                className="flex flex-col gap-4"
+              >
+                <a>{props.menu}</a>
+              </motion.li>
+              <motion.li
+                initial={{ x: 250, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
+                className="flex flex-col gap-4"
+              >
+                <a>{props.about}</a>
+              </motion.li>
+              <motion.li
+                initial={{ x: 250, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3, ease: "easeIn" }}
+                className="flex flex-col gap-4"
+              >
+                <a>{props.contact}</a>
+              </motion.li>
+            </ul>
           )}
           {isDesktop && (
             <ul className="flex flex-col md:flex-row gap-4 items-center justify-center text-2xl text-white mr-2">
-              {menu.map((voce) => {
-                return (
-                  <li key={voce.href}>
-                    <a href={voce.href}>{voce.label}</a>
-                  </li>
-                );
-              })}
+              <li className="flex gap-4">
+                <a>{props.home}</a>
+              </li>
+              <li className="flex gap-4">
+                <a>{props.menu}</a>
+              </li>
+              <li className="flex gap-4">
+                <a>{props.about}</a>
+              </li>
+              <li className="flex gap-4">
+                <a>{props.contact}</a>
+              </li>
             </ul>
           )}
         </nav>

@@ -1,71 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import Cocktail from "../../public/cocktail.svg";
-import Beer from "../../public/beer.svg";
-import Dj from "../../public/dj.svg";
+import Features from "../components/Features.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+
+changeLanguage("en");
 ---
 
-<Layout title="Gascoigne Pub">
+<Layout title={t("home.title")}>
   <main class="bg-red-900">
-    <div class="mx-auto">
+    <div class="">
       <div class="bg-fixed bg-center bg-[url('/hero.jpg')]">
         <div
           class="gap-48 min-h-screen rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
         >
           <div class="p-4">
-            <h2 class="my-4 font-marker text-5xl text-white">
-              "Qualunque cosa faccia nella vita deve essere divertente: se non
-              lo è vuol dire che ho fallito."
+            <h2 class="my-4 font-marker text-3xl md:text-5xl text-white">
+              {t("home.quote")}
             </h2>
             <p class="text-5xl text-gray-800 font-marker self-start">
               Paul Gascoigne
             </p>
           </div>
-          <div class="bg-white w-full p-6 py-12">
-            <p class="text-black text-lg">
-              <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni
-              un punto di riferimento per i clienti attenti alle qualità e
-              amanti della buona musica.
-            </p>
+          <div class="bg-white w-full p-6 py-6">
+            <Trans i18nKey="home.first">
+              <p class="text-black text-lg">
+                <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni
+                un punto di riferimento per i clienti attenti alle qualità e
+                amanti della buona musica.
+              </p>
+            </Trans>
             <p class="text-black text-lg pt-4">
-              Sorprendenti cocktail preparati dal nostro staff, una vasta
-              selezione di birre artigianali e eventi imperdibili rappresentano
-              i punti di forza del locale.
+              {t("home.second")}
             </p>
-            <div class="mx-auto gap-12 flex flex-row justify-evenly my-4">
-              <div
-                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-              >
-                <Image
-                  src={Cocktail}
-                  alt={"Cocktail"}
-                  class="bg-zinc-200 max-h-16 rounded-full"
-                />
-              </div>
-              <div
-                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-              >
-                <Image
-                  src={Dj}
-                  alt={"Dj"}
-                  class="top-0 max-h-16 left-0 relative"
-                />
-              </div>
-              <div
-                class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-              >
-                <Image
-                  src={Beer}
-                  alt={"Beer"}
-                  class="bg-zinc-200 max-h-16 rounded-full"
-                />
-              </div>
-            </div>
-            <p class="text-black text-lg pt-6">
-              Il Gascoigne si trova in Piazza Teatro Santa Cecilia, 1 nel cuore
-              del centro storico di Palermo, in una delle zone più in voga della
-              "movida" palermitana.
+            <Features />
+            <p class="text-black text-lg">
+              {t("home.third")}
             </p>
           </div>
         </div>

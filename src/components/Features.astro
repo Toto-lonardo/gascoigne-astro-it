@@ -1,0 +1,68 @@
+---
+import { t } from "i18next";
+import { Image } from "astro:assets";
+import Cocktail from "../../public/cocktail.svg";
+import Beer from "../../public/beer.svg";
+import Dj from "../../public/dj.svg";
+import { Icon } from "./Icon.jsx";
+---
+
+<div
+  class="mx-auto gap-12 flex flex-col md:flex-row justify-evenly items-center mt-8 mb-6"
+>
+  <Icon client:load delay={0}>
+    <div
+      slot="image"
+      class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+    >
+      <Image
+        src={Cocktail}
+        alt={"Cocktail"}
+        class="top-0 max-h-16 left-0 relative"
+      />
+    </div>
+    <p slot="imagename">Cocktail</p>
+  </Icon>
+  <Icon client:load delay={0.5}>
+    <div
+      slot="image"
+      class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+    >
+      <Image src={Dj} alt={"Dj set"} class="top-0 max-h-16 left-0 relative" />
+    </div>
+    <p slot="imagename">Dj Set</p>
+  </Icon>
+  <Icon client:load delay={1}>
+    <div
+      slot="image"
+      class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
+    >
+      <Image src={Beer} alt={"Beer"} class="top-0 max-h-16 left-0 relative" />
+    </div>
+    <p slot="imagename">{t("home.beer")}</p>
+  </Icon>
+  <!-- <div class="flex flex-col justify-center items-center"> -->
+  <!--   <div -->
+  <!--     class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center" -->
+  <!--   > -->
+  <!--     <Image src={Dj} alt={"Dj"} class="top-0 max-h-16 left-0 relative" /> -->
+  <!--   </div> -->
+  <!--   <p class="text-lg text-center text-red-900 font-bold uppercase m-1"> -->
+  <!--     Dj SET -->
+  <!--   </p> -->
+  <!-- </div> -->
+  <!-- <div class="flex flex-col justify-center items-center"> -->
+  <!--   <div -->
+  <!--     class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center" -->
+  <!--   > -->
+  <!--     <Image -->
+  <!--       src={Beer} -->
+  <!--       alt={"Beer"} -->
+  <!--       class="bg-zinc-200 max-h-16 rounded-full" -->
+  <!--     /> -->
+  <!--   </div> -->
+  <!--   <p class="text-lg text-center text-red-900 font-bold uppercase m-1"> -->
+  <!--     {t("home.beer")} -->
+  <!--   </p> -->
+  <!-- </div> -->
+</div>
