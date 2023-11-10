@@ -1,4 +1,4 @@
-# Gascoigne Pub official website 
+# Gascoigne Pub official website
 
 This website is an open source project and it is made with Astrojs.
 

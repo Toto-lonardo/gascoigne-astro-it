@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Features from "../components/Features.astro";
-import i18next, { t, changeLanguage } from "i18next";
+import { Image } from "astro:assets";
+import Cover from "../../public/cover.webp";
+import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
 changeLanguage("en");
@@ -31,28 +33,38 @@ changeLanguage("en");
       <div class="bg-white w-full p-6 py-6">
         <Trans i18nKey="home.first">
           <p class="text-black text-lg">
-            <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni un
-            punto di riferimento per i clienti attenti alle qualità e amanti
-            della buona musica.
+            <span class="font-bold">Gascoigne Pub</span> has been a reference
+            point for discerning customers and music lovers for over ten years.
           </p>
         </Trans>
         <p class="text-black text-lg pt-4">
           {t("home.second")}
         </p>
         <Features />
-        <p class="text-black text-lg">
-          {t("home.third")}
-        </p>
       </div>
     </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.1069970835424!2d13.36249057662905!3d38.11444509251991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58c865db055%3A0x3f67b9048dae7e0!2sGascoigne!5e0!3m2!1sit!2sit!4v1697039947033!5m2!1sit!2sit"
-      class="w-full h-80"
-      style="w-full"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
+    <div
+      class="flex md:flex-row flex-col items-center divide-white border-t-white"
     >
-    </iframe>
+      <Image
+        src={Cover}
+        alt={"Entrance of the pub"}
+        class="relative lg:w-1/2"
+      />
+      <div
+        class="flex flex-col justify-center items-center p-8 mx-auto md:gap-4"
+      >
+        <p
+          class="font-marker text-white p-8 max-w-sm md:max-w-lg text-center text-2xl lg:text-4xl"
+        >
+          {t("home.third")}
+        </p>
+        <button
+          class="rounded-2xl animate-bounce bg-white text-red-900 font-bold w-28 text-xl py-3 px-4 text-right"
+        >
+          <a href="contact">Come on over!</a>
+        </button>
+      </div>
+    </div>
   </main>
 </Layout>
