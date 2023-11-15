@@ -13,54 +13,53 @@ changeLanguage("en");
   <main class="bg-red-900">
     <div class="">
       <div
-        class="bg-no-repeat bg-cover md:bg-center bg-bottom h-[70vh] bg-[url('/hero.jpg')]"
+        class="h-[500px] bg-[url('/hero2.jpg')] bg-cover bg-[center_bottom] bg-no-repeat md:bg-center"
       >
         <div
-          class="h-[70vh] rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
+          class="flex h-[500px] flex-col items-center justify-between rounded-b bg-gradient-to-b from-black/80 via-white/20 to-black/80"
         >
-          <div class="p-4 mx-auto max-w-screen-lg">
-            <h2 class="my-4 font-marker text-2xl md:text-5xl text-white">
+          <div class="mx-auto max-w-screen-lg p-4">
+            <h2 class="my-4 font-marker text-2xl text-white md:text-5xl">
               {t("home.quote")}
             </h2>
             <p
-              class="md:text-5xl text-3xl text-gray-800 font-marker self-start"
+              class="self-start font-marker text-3xl text-gray-800 md:text-5xl"
             >
               Paul Gascoigne
             </p>
           </div>
         </div>
       </div>
-      <div class="bg-white w-full p-6 py-6">
+      <div class="w-full rounded border-2 border-red-900 bg-white p-6">
         <Trans i18nKey="home.first">
-          <p class="text-black text-lg">
+          <p class="text-lg text-black">
             <span class="font-bold">Gascoigne Pub</span> has been a reference
             point for discerning customers and music lovers for over ten years.
           </p>
         </Trans>
-        <p class="text-black text-lg pt-4">
+        <p class="pt-2 text-lg text-black">
           {t("home.second")}
         </p>
+        <hr class="mx-1 my-6 border border-red-900" />
         <Features />
       </div>
     </div>
-    <div
-      class="flex md:flex-row flex-col items-center divide-white border-t-white"
-    >
+    <div class="flex flex-col items-center lg:flex-row">
       <Image
         src={Cover}
         alt={"Entrance of the pub"}
-        class="relative lg:w-1/2"
+        class="relative object-cover lg:w-1/2"
       />
       <div
-        class="flex flex-col justify-center items-center p-8 mx-auto md:gap-4"
+        class="mx-auto flex flex-col items-center justify-center border-2 border-white p-8 md:gap-4 md:border-none"
       >
         <p
-          class="font-marker text-white p-8 max-w-sm md:max-w-lg text-center text-2xl lg:text-4xl"
+          class="max-w-sm p-8 text-center font-marker text-lg text-white md:max-w-lg md:text-2xl xl:text-4xl"
         >
           {t("home.third")}
         </p>
         <button
-          class="rounded-2xl animate-bounce bg-white text-red-900 font-bold w-28 text-xl py-3 px-4 text-right"
+          class="w-1/2 rounded bg-white px-1 py-4 text-center text-xl font-bold text-red-900"
         >
           <a href="contact">Come on over!</a>
         </button>

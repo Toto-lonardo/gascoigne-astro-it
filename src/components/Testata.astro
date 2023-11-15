@@ -23,7 +23,25 @@ import { Menu } from "../components/Menu";
         class="bg-red-900 text-white text-lg"
       />
     </div>
-    <Menu client:load>
+    <nav class="xl:block hidden">
+      <ul
+        class="flex flex-col md:flex-row gap-4 items-center justify-center text-2xl text-white mr-2"
+      >
+        <li class="flex gap-4">
+          <a href="/">Home</a>
+        </li>
+        <li class="flex gap-4">
+          <a href="/menu">Menu</a>
+        </li>
+        <li class="flex gap-4">
+          <a href="/about">About</a>
+        </li>
+        <li class="flex gap-4">
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <Menu client:media="(max-width: 1280px)">
       <a slot="home" href="/">Home</a>
       <a slot="menu" href="/menu">Menu</a>
       <a slot="about" href="/about">About</a>

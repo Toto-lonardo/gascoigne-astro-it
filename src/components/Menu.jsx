@@ -57,26 +57,10 @@ export const Menu = (props) => {
               </motion.li>
             </ul>
           )}
-          {isDesktop && (
-            <ul className="flex flex-col md:flex-row gap-4 items-center justify-center text-2xl text-white mr-2">
-              <li className="flex gap-4">
-                <a>{props.home}</a>
-              </li>
-              <li className="flex gap-4">
-                <a>{props.menu}</a>
-              </li>
-              <li className="flex gap-4">
-                <a>{props.about}</a>
-              </li>
-              <li className="flex gap-4">
-                <a>{props.contact}</a>
-              </li>
-            </ul>
-          )}
         </nav>
         {!isDesktop && (
           <button
-            className="block space-y-1.5 z-50 mr-4 xl:mr-0 "
+            className="block fixed space-y-1.5 z-50 mr-4 xl:mr-0 "
             onClick={() => setToggle(!toggled)}
           >
             <motion.span
