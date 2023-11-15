@@ -60,7 +60,9 @@ export const Menu = (props) => {
         </nav>
         {!isDesktop && (
           <button
-            className="block fixed space-y-1.5 z-50 mr-4 xl:mr-0 "
+            className={` ${
+              toggled && "fixed"
+            } block space-y-1.5 z-50 mr-4 xl:mr `}
             onClick={() => setToggle(!toggled)}
           >
             <motion.span
