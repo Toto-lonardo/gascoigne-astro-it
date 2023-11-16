@@ -9,14 +9,17 @@
     "first": "<0><1>Gascoigne Pub</1> da oltre dieci anni un punto di riferimento per i clienti attenti alle qualità e amanti della buona musica.</0>",
     "second": "Sorprendenti cocktail preparati dal nostro staff, una vasta selezione di birre artigianali e eventi imperdibili rappresentano i punti di forza del locale. ",
     "third": "Il Gascoigne si trova in Piazza Teatro Santa Cecilia, 1 nel cuore del centro storico di Palermo.",
-    "beer": "Birre Artigianali"
+    "beer": "Birre Artigianali",
+    "cta": "Ok Andiamo!"
   },
   "navi": {
-    "about": "chi siamo",
+    "home": "homepage",
+    "menu": "menu",
+    "events": "eventi",
     "contact": "contatti"
   },
-  "about": {
-    "title": "Gascoigne Pub - Chi siamo"
+  "events": {
+    "title": "Gascoigne Pub - Eventi"
   },
   "menu": {
     "title": "Gascoigne Pub - Menu"

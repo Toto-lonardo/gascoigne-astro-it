@@ -1,12 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { Image } from "astro:assets";
 
-changeLanguage("it");
+changeLanguage("en");
 ---
 
-<Layout title={t("about.title")} <main>
-  <h2>Hello from About</h2>
+<Layout title={t("events.title")} <main>
+  <h2>Hello from Events</h2>
 </Layout>

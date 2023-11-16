@@ -4,7 +4,7 @@ export default {
   locales: ["en", "it"],
   routes: {
     it: {
-      about: "chi siamo",
+      events: "chi-siamo",
       menu: "menu",
       contact: "contatti",
     },

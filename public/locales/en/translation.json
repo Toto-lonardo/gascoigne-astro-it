@@ -9,19 +9,22 @@
     "first": "<0><1>Gascoigne Pub</1> has been a reference point for discerning customers and music lovers for over ten years.</0>",
     "second": "Our skilled staff prepares amazing cocktails, a wide selection of craft beers, along with unforgettable events, are the highlights of the venue",
     "third": "Gascoigne is located at Piazza Teatro Santa Cecilia, 1, in Palermo.",
-    "beer": "Craft Beer"
+    "beer": "Craft Beer",
+    "cta": "Come on over!"
   },
   "navi": {
-    "about": "about",
+    "home": "home",
+    "menu": "menu",
+    "events": "events",
     "contact": "contact"
   },
-  "about": {
-    "title": "Gascoigne Pub - About"
+  "events": {
+    "title": "Gascoigne Pub - Events"
   },
   "menu": {
     "title": "Gascoigne Pub - Menu"
   },
   "contact": {
-    "title": "Gascoigne Pub - Cont"
+    "title": "Gascoigne Pub - Contact"
   }
 }

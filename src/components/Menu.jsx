@@ -45,7 +45,7 @@ export const Menu = (props) => {
                 transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
                 className="flex flex-col gap-4"
               >
-                <a>{props.about}</a>
+                <a>{props.events}</a>
               </motion.li>
               <motion.li
                 initial={{ x: 250, opacity: 0 }}
@@ -64,6 +64,7 @@ export const Menu = (props) => {
               toggled && "fixed"
             } block space-y-1.5 z-50 mr-4 xl:mr `}
             onClick={() => setToggle(!toggled)}
+            aria-label="hamburger menu button"
           >
             <motion.span
               animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}

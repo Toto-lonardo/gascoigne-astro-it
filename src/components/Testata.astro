@@ -12,7 +12,7 @@ import { Menu } from "../components/Menu";
       <Image
         class="p-4"
         src={GascoigneLogo}
-        alt="Il logo ufficiale del Gascoigne Pub"
+        alt="Gascoigne Pub Logo"
         width={150}
       />
     </a>
@@ -21,9 +21,10 @@ import { Menu } from "../components/Menu";
         showFlag={false}
         languageMapping={{ en: "English" }}
         class="bg-red-900 text-white text-lg"
+        aria-label="Language Selector - Seleziona la lingua"
       />
     </div>
-    <nav class="xl:block hidden">
+    <nav class="xl:block hidden" aria-label="desktop navigation menu">
       <ul
         class="flex flex-col md:flex-row gap-4 items-center justify-center text-2xl text-white mr-2"
       >
@@ -34,7 +35,7 @@ import { Menu } from "../components/Menu";
           <a href="/menu">Menu</a>
         </li>
         <li class="flex gap-4">
-          <a href="/about">About</a>
+          <a href="/events">Events</a>
         </li>
         <li class="flex gap-4">
           <a href="/contact">Contact</a>
@@ -44,7 +45,7 @@ import { Menu } from "../components/Menu";
     <Menu client:media="(max-width: 1280px)">
       <a slot="home" href="/">Home</a>
       <a slot="menu" href="/menu">Menu</a>
-      <a slot="about" href="/about">About</a>
+      <a slot="events" href="/events">Events</a>
       <a slot="contact" href="/contact">Contact</a>
     </Menu>
   </div>

@@ -1,11 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
+import Features from "../../components/Features.astro";
 import { Image } from "astro:assets";
-import Cocktail from "../../../public/cocktail.svg";
-import Beer from "../../../public/beer.svg";
-import Dj from "../../../public/dj.svg";
+import Cover from "../../../public/cover.webp";
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 
 changeLanguage("it");
 ---
@@ -13,95 +12,57 @@ changeLanguage("it");
 <Layout title={t("home.title")}>
   <main class="bg-red-900">
     <div class="">
-      <div class="bg-fixed bg-center bg-[url('/hero.jpg')]">
+      <div
+        class="h-[500px] bg-[url('/hero2.jpg')] bg-cover bg-[center_bottom] bg-no-repeat md:bg-center"
+      >
         <div
-          class="gap-48 min-h-screen rounded-b bg-gradient-to-b from-red-600/50 via-white/20 to-black/80 flex flex-col justify-between items-center"
+          class="flex h-[500px] flex-col items-center justify-between rounded-b bg-gradient-to-b from-black/80 via-white/20 to-black/80"
         >
-          <div class="p-4">
-            <h2 class="my-4 font-marker text-3xl md:text-5xl text-white">
+          <div class="mx-auto max-w-screen-lg p-4">
+            <h2 class="my-4 font-marker text-2xl text-white md:text-5xl">
               {t("home.quote")}
             </h2>
-            <p class="text-5xl text-gray-800 font-marker self-start">
+            <p
+              class="self-start font-marker text-3xl text-gray-800 md:text-5xl"
+            >
               Paul Gascoigne
             </p>
           </div>
-          <div class="bg-white w-full p-6 py-12">
-            <Trans i18nKey="home.first">
-              <p class="text-black text-lg">
-                <span class="font-bold">Gascoigne Pub</span> da oltre dieci anni
-                un punto di riferimento per i clienti attenti alle qualità e
-                amanti della buona musica.
-              </p>
-            </Trans>
-            <p class="text-black text-lg pt-4">
-              {t("home.second")}
-            </p>
-            <div
-              class="mx-auto gap-12 flex flex-col md:flex-row justify-evenly items-center my-4"
-            >
-              <div class="flex flex-col justify-center items-center">
-                <div
-                  class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-                >
-                  <Image
-                    src={Cocktail}
-                    alt={"Cocktail"}
-                    class="bg-zinc-200 max-h-16 rounded-full"
-                  />
-                </div>
-                <p
-                  class="text-lg text-center text-red-900 font-bold uppercase m-1"
-                >
-                  Cocktail
-                </p>
-              </div>
-              <div class="flex flex-col justify-center items-center">
-                <div
-                  class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-                >
-                  <Image
-                    src={Dj}
-                    alt={"Dj"}
-                    class="top-0 max-h-16 left-0 relative"
-                  />
-                </div>
-                <p
-                  class="text-lg text-center text-red-900 font-bold uppercase m-1"
-                >
-                  Dj SET
-                </p>
-              </div>
-              <div class="flex flex-col justify-center items-center">
-                <div
-                  class="w-32 h-32 p-4 bg-zinc-200 rounded-full flex justify-center items-center"
-                >
-                  <Image
-                    src={Beer}
-                    alt={"Beer"}
-                    class="bg-zinc-200 max-h-16 rounded-full"
-                  />
-                </div>
-                <p
-                  class="text-lg text-center text-red-900 font-bold uppercase m-1"
-                >
-                  {t("home.beer")}
-                </p>
-              </div>
-            </div>
-            <p class="text-black text-lg pt-6">
-              {t("home.third")}
-            </p>
-          </div>
         </div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.1069970835424!2d13.36249057662905!3d38.11444509251991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58c865db055%3A0x3f67b9048dae7e0!2sGascoigne!5e0!3m2!1sit!2sit!4v1697039947033!5m2!1sit!2sit"
-          class="w-full h-80"
-          style="w-full"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+      </div>
+      <div class="w-full rounded border-2 border-red-900 bg-white p-6">
+        <Trans i18nKey="home.first">
+          <p class="text-lg text-black">
+            <span class="font-bold">Gascoigne Pub</span> has been a reference
+            point for discerning customers and music lovers for over ten years.
+          </p>
+        </Trans>
+        <p class="pt-2 text-lg text-black">
+          {t("home.second")}
+        </p>
+        <hr class="mx-1 my-6 border border-red-900" />
+        <Features />
+      </div>
+    </div>
+    <div class="flex flex-col items-center lg:flex-row">
+      <Image
+        src={Cover}
+        alt={"Entrance of the pub"}
+        class="relative object-cover lg:w-1/2"
+      />
+      <div
+        class="mx-auto flex flex-col items-center justify-center border-2 border-white p-8 md:gap-4 md:border-none"
+      >
+        <p
+          class="max-w-sm p-8 text-center font-marker text-lg text-white md:max-w-lg md:text-2xl xl:text-4xl"
         >
-        </iframe>
+          {t("home.third")}
+        </p>
+        <button
+          class="w-1/2 rounded bg-white px-1 py-4 text-center text-xl font-bold text-red-900 animate-pulse"
+        >
+          <a href="contact" class="">{t("home.cta")}</a>
+        </button>
       </div>
     </div>
   </main>
